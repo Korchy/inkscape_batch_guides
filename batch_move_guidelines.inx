@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-<name>Batch Guidelines</name>
-    <id>nikita_akimov.interplanety.batch_guidelines</id>
-    <dependency type="executable" location="extensions">batch_guidelines.py</dependency>
+<name>Batch Move</name>
+    <id>nikita_akimov.interplanety.batch_move_guidelines</id>
+    <dependency type="executable" location="extensions">batch_move_guidelines.py</dependency>
     <param name="guide_direction" type="optiongroup" gui-text="Guide Direction:">
         <option value="vertical">Vertical</option>
         <option value="horizontal">Horizontal</option>
@@ -15,6 +15,6 @@
         </effects-menu>
     </effect>
     <script>
-        <command reldir="extensions" interpreter="python">batch_guidelines.py</command>
+        <command reldir="extensions" interpreter="python">batch_move_guidelines.py</command>
     </script>
 </inkscape-extension>
