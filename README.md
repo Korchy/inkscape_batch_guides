@@ -18,7 +18,7 @@ For Inkscape version
 
 Location
 -
-Main menu - Extensions - Guides - Batch Guidelines
+Main menu - Extensions - Guides - Batch Move
 
 Installation
 -
