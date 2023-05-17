@@ -23,8 +23,7 @@ Main menu - Extensions - Guides - Batch Guidelines
 Installation
 -
 - Copy all the extension files to the "extension" Inkscape directory.
-
-
+    ```
     c:\Users\_USER_NAME_\AppData\Roaming\inkscape\extensions\
-
+    ```
 - Restart Inkscape
