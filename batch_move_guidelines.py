@@ -10,10 +10,12 @@
 import sys
 from inkex import EffectExtension
 
+
 # for debug output
 def eprint(*args, **kwargs):
     # print to stderr
     print(*args, file=sys.stderr, **kwargs)
+
 
 class Guidelines(EffectExtension):
 
@@ -21,15 +23,15 @@ class Guidelines(EffectExtension):
         # main method for Effect action
         for guide in self.guides(direction=self.options.guide_direction):
             # inkscape v 1.2
-            guide.move_to(
-                pos_x=guide.point.x + (self.options.offset if guide.is_vertical else 0.0),
-                pos_y=guide.point.y - (self.options.offset if guide.is_horizontal else 0.0)
-            )
-            # inkscape v 1.3
-            # guide.set_position(
-            #     pos_x=guide.raw_position.x + (self.options.offset if guide.is_vertical else 0.0),
-            #     pos_y=guide.raw_position.y + (self.options.offset if guide.is_horizontal else 0.0)
+            # guide.move_to(
+            #     pos_x=guide.point.x + (self.options.offset if guide.is_vertical else 0.0),
+            #     pos_y=guide.point.y - (self.options.offset if guide.is_horizontal else 0.0)
             # )
+            # inkscape v 1.3
+            guide.set_position(
+                pos_x=guide.position.x + (self.options.offset if guide.is_vertical else 0.0),
+                pos_y=guide.position.y + (self.options.offset if guide.is_horizontal else 0.0)
+            )
 
     def guides(self, direction: str = None):
         # get guides by direction ['vertical', 'horizontal', None]
@@ -48,12 +50,13 @@ class Guidelines(EffectExtension):
             default=0.0,
             help='Offset'
         )
-        pars.add_argument (
+        pars.add_argument(
             '--guide_direction',
             type=str,
             default='vertical',
             help='Guide Direction'
         )
+
 
 if __name__ == '__main__':
     Guidelines().run()

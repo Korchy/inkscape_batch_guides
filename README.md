@@ -10,11 +10,11 @@ Guides moves separately. Horizontal guides moved vertically and vertical guides 
 
 Extension version
 -
-1.0.0.
+1.0.1.
 
 For Inkscape version
 -
-1.2
+1.3
 
 Location
 -
@@ -27,3 +27,11 @@ Installation
     c:\Users\_USER_NAME_\AppData\Roaming\inkscape\extensions\
     ```
 - Restart Inkscape
+
+Version history
+-
+1.0.1
+- Updated for Inkscape 1.3
+
+1.0.0.
+- Release
