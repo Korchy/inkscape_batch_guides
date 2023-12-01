@@ -8,7 +8,6 @@
 #    https://github.com/Korchy/inkscape_batch_guides
 
 import sys
-import inkex
 from inkex import EffectExtension
 
 
@@ -18,23 +17,12 @@ def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
 
-class BatchMoveGuidelines(EffectExtension):
+class BatchRemoveGuidelines(EffectExtension):
 
     def effect(self):
         # main method for Effect action
         for guide in self.guides(direction=self.options.guide_direction):
-            if inkex.__version__[:3] == '1.2':
-                # inkscape v 1.2
-                guide.move_to(
-                    pos_x=guide.point.x + (self.options.offset if guide.is_vertical else 0.0),
-                    pos_y=guide.point.y - (self.options.offset if guide.is_horizontal else 0.0)
-                )
-            else:
-                # inkscape v 1.3
-                guide.set_position(
-                    pos_x=guide.position.x + (self.options.offset if guide.is_vertical else 0.0),
-                    pos_y=guide.position.y + (self.options.offset if guide.is_horizontal else 0.0)
-                )
+            guide.delete()
 
     def guides(self, direction: str = None):
         # get guides by direction ['vertical', 'horizontal', None]
@@ -48,18 +36,12 @@ class BatchMoveGuidelines(EffectExtension):
     def add_arguments(self, pars):
         # parse arguments from the UI
         pars.add_argument(
-            '--offset',
-            type=float,
-            default=0.0,
-            help='Offset'
-        )
-        pars.add_argument(
             '--guide_direction',
             type=str,
-            default='vertical',
+            default='all',
             help='Guide Direction'
         )
 
 
 if __name__ == '__main__':
-    BatchMoveGuidelines().run()
+    BatchRemoveGuidelines().run()

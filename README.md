@@ -1,24 +1,34 @@
 # Inkscape: Batch Guides
 
-Extension for vector graphical editor Inkscape.
+Extension for the Inkskape vector graphical editor.
 
 Extension functionality
 -
-Move all guides (guidelines) on custom offset.
+This extension helps to batch manage guides (guidelines).
+
+**Batch Move**
+
+Move all guides on custom offset.
 
 Guides moves separately. Horizontal guides moved vertically and vertical guides moved horizontally.
 
+**Batch Remove**
+
+Remove all guides.
+
+You can choose what guides to remove: all, only vertical, only horizontal.
+
 Extension version
 -
-1.0.1.
+1.1.0.
 
 For Inkscape version
 -
-1.2, 1.3
+1.3
 
 Location
 -
-Main menu - Extensions - Guides - Batch Move
+Main menu - Extensions - Guides
 
 Installation
 -
@@ -30,6 +40,9 @@ Installation
 
 Version history
 -
+1.1.0
+- Added the Batch Remove function
+
 1.0.1
 - Updated for Inkscape 1.3
 
